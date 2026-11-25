@@ -20,4 +20,4 @@ services:
       - key: PYTHON_VERSION
         value: 3.12.12
       - key: PREDICTION_API_URL
-        value: https://healthcare-api.onrender.com/predict
+        value: https://healthcare-api-navp.onrender.com/predict
