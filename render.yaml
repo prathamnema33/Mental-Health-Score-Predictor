@@ -6,6 +6,9 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
 
   - type: web
     name: healthcare-frontend
@@ -14,5 +17,7 @@ services:
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run frontend.py --server.address 0.0.0.0 --server.port $PORT --server.headless true
     envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.12
       - key: PREDICTION_API_URL
         value: https://healthcare-api.onrender.com/predict
